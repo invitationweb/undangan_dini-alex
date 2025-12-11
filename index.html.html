@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Undangan — Laras & Bagus (Template)</title>
+  <!-- Ganti file: bg.jpg, groom.jpg, bride.jpg, music.mp3 di root repo -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --gold:#d4af37;
+      --bg:#fefcfc;
+      --muted:#bdbdbd;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Nunito',system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#fff}
+
+    /* Hero / cover */
+    .cover{
+      min-height:100vh;
+      background-image:linear-gradient(rgba(2,2,2,0.6),rgba(2,2,2,0.6)), url('bg.jpg');
+      background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;padding:40px}
+    .card{
+      width:100%;max-width:950px;background:rgba(0,0,0,0.45);border:1px solid rgba(212,175,55,0.14);backdrop-filter: blur(6px);border-radius:18px;padding:36px;box-shadow:0 10px 30px rgba(0,0,0,0.6)
+    }
+
+    h1.title{font-family:'Playfair Display',serif;font-size:44px;margin:0;color:var(--gold);letter-spacing:1px}
+    .subtitle{font-family:'Playfair Display',serif;color:#fff;margin:6px 0 18px;font-size:20px}
+    .meta{color:var(--muted);margin-bottom:18px}
+
+    .couple{display:flex;gap:20px;align-items:center;justify-content:center}
+    .avatar{width:140px;height:140px;border-radius:12px;overflow:hidden;border:4px solid rgba(212,175,55,0.12)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .names{text-align:center}
+    .names .a{font-size:20px;color:#fff}
+    .names .b{color:var(--gold);font-family:'Playfair Display',serif;font-size:22px}
+
+    .buttons{display:flex;gap:10px;justify-content:center;margin-top:18px}
+    .btn{background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,0.25);padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.secondary{color:#fff;border-color:rgba(255,255,255,0.07)}
+
+    /* Details */
+    .details{padding:48px 20px;background:linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.6));}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1100px;margin:0 auto}
+    .card2{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;border:1px solid rgba(212,175,55,0.06)}
+    .card2 h3{margin:0 0 8px;color:var(--gold);font-family:'Playfair Display',serif}
+    .card2 p{margin:0;color:var(--muted)}
+
+    /* Map placeholder */
+    .map{height:220px;border-radius:10px;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+    /* RSVP */
+    .rsvp{max-width:700px;margin:28px auto 80px;padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:rgba(0,0,0,0.45)}
+    .rsvp label{display:block;margin-bottom:6px;color:var(--muted)}
+    .rsvp input,.rsvp textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff}
+    .rsvp .send{margin-top:12px;background:var(--gold);border:none;color:#000;padding:10px 16px;border-radius:8px;font-weight:700}
+
+    footer{padding:28px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* small screens */
+    @media (max-width:520px){h1.title{font-size:30px}.avatar{width:110px;height:110px}}
+
+    /* decorative gold line */
+    .goldline{height:4px;background:linear-gradient(90deg,transparent, var(--gold), transparent);border-radius:999px;margin:18px 0}
+
+    /* personal greeting */
+    .greeting{font-size:18px;color:var(--muted);text-align:center;margin-bottom:8px}
+
+  </style>
+</head>
+<body>
+
+  <!-- AUDIO -->
+  <audio id="musik" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- COVER -->
+  <section class="cover" id="cover">
+    <div class="card">
+      <div class="greeting" id="greet">Kepada Yth. Bapak/Ibu/Saudara</div>
+      <h1 class="title">Laras & Bagus</h1>
+      <div class="subtitle">Menyatukan dua hati dalam ikatan suci</div>
+      <div class="meta">Sabtu, 22 Februari 2025 • Akad 09:00 • Resepsi 11:00</div>
+
+      <div class="couple">
+        <div class="avatar"><img src=""alt="Pria"></div>
+        <div class="names">
+          <div class="a">Bagus Saputra</div>
+          <div class="b">&amp;</div>
+          <div class="a">Laras Sari</div>
+        </div>
+        <div class="avatar"><img src="" alt=""></div>
+      </div>
+
+      <div class="goldline"></div>
+      <div class="buttons">
+        <a class="btn" href="#detail" id="buka">Buka Undangan</a>
+        <button class="btn secondary" id="playbtn">Mainkan Musik</button>
+      </div>
+      <p style="text-align:center;color:var(--muted);margin-top:12px;font-size:13px">(Klik di area mana saja untuk mengaktifkan audio jika perlu)</p>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="details" id="detail">
+    <div class="grid">
+      <div class="card2">
+        <h3>Acara</h3>
+        <p><strong>Akad:</strong> Sabtu, 22 Februari 2025 — 09:00 WIB</p>
+        <p><strong>Resepsi:</strong> Sabtu, 22 Februari 2025 — 11:00 WIB</p>
+      </div>
+
+      <div class="card2">
+        <h3>Lokasi</h3>
+        <p>Gedung Graha Budaya, Jl. Contoh No.1, Surakarta</p>
+        <div class="map">[Tampilkan peta di sini — ganti dengan embed Google Maps]</div>
+      </div>
+
+      <div class="card2">
+        <h3>Doa & Ucapan</h3>
+        <p>Kami mengundang Bapak/Ibu untuk hadir dan mendoakan kami. Kehadiran dan do'a restu Anda sangat berarti.</p>
+      </div>
+
+      <div class="card2">
+        <h3>Dresscode</h3>
+        <p>Busana tradisional / semi-formal (opsional)</p>
+      </div>
+    </div>
+
+    <div class="rsvp" id="rsvp">
+      <h3 style="color:var(--gold);margin-top:0;font-family:'Playfair Display',serif">Konfirmasi Kehadiran</h3>
+      <label for="nama">Nama</label>
+      <input id="nama" placeholder="Tulis nama Anda" />
+      <label for="kehadiran">Kehadiran</label>
+      <select id="kehadiran" style="width:100%;padding:10px;border-radius:8px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.06)">
+        <option value="hadir">Hadir</option>
+        <option value="tidak">Tidak dapat hadir</option>
+        <option value="mengirim">Mengirim ucapan</option>
+      </select>
+      <label for="pesan">Pesan / Ucapan (opsional)</label>
+      <textarea id="pesan" rows="3" placeholder="Doa atau ucapan singkat"></textarea>
+      <button class="send" id="send">Kirim</button>
+      <p id="sentmsg" style="display:none;margin-top:10px;color:var(--muted)"></p>
+    </div>
+
+  </section>
+
+  <footer>
+    <div>Terima kasih atas doa & kehadiran Anda.</div>
+    <div style="margin-top:8px;color:var(--muted);font-size:13px">Template: Jawa Aesthetic Hitam–Gold • Ganti data & file sesuai kebutuhan</div>
+  </footer>
+
+  <script>
+    // Personalize greeting from URL param ?to=Nama
+    function getParam(k){const p=new URLSearchParams(location.search);return p.get(k)}
+    const to = getParam('to') || 'Bapak/Ibu/Saudara';
+    document.getElementById('greet').textContent = 'Kepada Yth. ' + to;
+
+    // Audio handling — many browser block autoplay until interaction
+    const audio = document.getElementById('musik');
+    const playbtn = document.getElementById('playbtn');
+    let audioStarted = false;
+
+    function tryPlay(){
+      if(audioStarted) return;
+      audio.play().then(()=>{
+        audioStarted = true; playbtn.textContent='Stop Musik';
+      }).catch(()=>{
+        // autoplay blocked — keep button to let user trigger
+        playbtn.textContent='Mainkan Musik';
+      })
+    }
+
+    // Try to start muted to bypass some blockers
+    audio.muted = true; audio.volume = 0.8; audio.loop = true;
+    try{ audio.play().then(()=>{audioStarted=true; audio.muted=false; playbtn.textContent='Stop Musik';}).catch(()=>{});}catch(e){}
+
+    // click handlers
+    playbtn.addEventListener('click', ()=>{
+      if(!audioStarted){ audio.muted = false; audio.play().then(()=>{audioStarted=true; playbtn.textContent='Stop Musik';}).catch(()=>{ alert('Klik layar sekali jika musik belum menyala.');}); }
+      else{ audio.pause(); audioStarted=false; playbtn.textContent='Mainkan Musik'; }
+    });
+
+    // also enable audio on any first user tap on cover
+    document.getElementById('cover').addEventListener('click', ()=>{ if(!audioStarted){ audio.muted=false; audio.play().catch(()=>{}); audioStarted=true; playbtn.textContent='Stop Musik'; }});
+
+    // Smooth scroll
+    document.getElementById('buka').addEventListener('click', (e)=>{ e.preventDefault(); document.getElementById('detail').scrollIntoView({behavior:'smooth'}); });
+
+    // RSVP handler — this template stores responses in localStorage (demo). Replace with backend/Google Form if you want server storage.
+    document.getElementById('send').addEventListener('click', ()=>{
+      const nama = document.getElementById('nama').value.trim();
+      const hadir = document.getElementById('kehadiran').value;
+      const pesan = document.getElementById('pesan').value.trim();
+      if(!nama){ alert('Silakan isi nama Anda.'); return; }
+      const entry = {nama, hadir, pesan, waktu: new Date().toISOString()};
+      const db = JSON.parse(localStorage.getItem('rsvp') || '[]'); db.push(entry); localStorage.setItem('rsvp', JSON.stringify(db));
+      document.getElementById('sentmsg').style.display='block';
+      document.getElementById('sentmsg').textContent = 'Terima kasih, konfirmasi Anda telah diterima.';
+      document.getElementById('nama').value=''; document.getElementById('pesan').value='';
+    });
+
+  </script>
+</body>
+</html>
